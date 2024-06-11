@@ -101,15 +101,15 @@ const ScrollableDiv = ({ id }) => {
         console.log("error--->", error);
       });
   }, [
-    number1,
-    number2,
-    number3,
-    number4,
-    number5,
-    number6,
-    number7,
-    number8,
-    number9,
+    eventData1,
+    eventData2,
+    eventData3,
+    eventData4,
+    eventData5,
+    eventData6,
+    eventData7,
+    eventData8,
+    eventData9,
   ]);
   const { contract: MatrixContract } = useContract(MatrixAddress, MatrixAbi);
 

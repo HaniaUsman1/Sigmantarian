@@ -26,7 +26,6 @@ const WalletDashboardMain = ({ id }) => {
   const { contract: MatrixContract } = useContract(MatrixAddress, MatrixAbi);
   const { contract: DiaContract } = useContract(DiaAddress, DiaAbi);
   const [eventDataFromDb, setEventDataFromDb] = useState([]);
-  console.log("eventDataFromDb------>", eventDataFromDb);
   useEffect(() => {
     let allData;
     axios
@@ -75,13 +74,6 @@ const WalletDashboardMain = ({ id }) => {
       console.error("contract call failure", err);
     }
   };
-
-  const checkUSer1 = parseInt(Number(user && user[0]));
-  const checkUSer2 = parseInt(Number(user && user[1]));
-  const checkUSer3 = parseInt(Number(user && user[2]));
-  const checkUSer4 = parseInt(Number(user && user[3]));
-  const checkUSer5 = parseInt(Number(user && user[4]));
-  console.log("checkUSer1------c---", checkUSer1);
 
   const currentUsers2 = parseInt(Number(user && user[2]));
   const callApprove = async () => {
@@ -223,7 +215,7 @@ const WalletDashboardMain = ({ id }) => {
           onClick={callApprove}
           className="bg-purple-800 rounded-lg border md:px-3 md:py-2 px-4 py-3 text-white font-semibold text-xs md:text-base"
         >
-          {currentUsers2 == 4 ? "You are Upgraded" : btnType}
+          {currentUsers2 == 4 ? "Upgraded" : btnType}
         </button>
       </div>
       <Link

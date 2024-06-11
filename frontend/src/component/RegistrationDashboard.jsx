@@ -70,7 +70,6 @@ const RegistrationDashboard = ({ viewHandler }) => {
             value={val}
             onChange={(e) => {
               setVal(e.target.value);
-              setUserIdHandler(e.target.value);
             }}
             className="border w-[70%] md:w-60 px-6 py-1 md:py-3 text-gray-500 rounded-full"
           />

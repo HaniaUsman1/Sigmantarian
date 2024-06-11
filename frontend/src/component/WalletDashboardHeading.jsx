@@ -26,18 +26,18 @@ const WalletDashboardHeading = ({ id }) => {
   const TotalEarnings = UseFormatEtherNumber(totalUsers && totalUsers[1]);
 
   const [eventDataFromDb, setEventDataFromDb] = useState([]);
-  console.log("eventDataFromDb------>", eventDataFromDb);
+
   useEffect(() => {
-    let allData;
-    axios
-      .get("https://check-back.vercel.app/user/getUserData/")
-      .then((res) => {
-        allData = res.data.users.filter((i) => i.userId === id);
-        setEventDataFromDb(allData);
-      })
-      .catch((error) => {
-        console.log("error--->", error);
-      });
+    const myFunc = async () => {
+      let allData = await axios.get(
+        "https://check-back.vercel.app/user/getUserData/"
+      );
+
+      setEventDataFromDb(
+        allData?.data.users.filter((user) => user.userId === id)
+      );
+    };
+    myFunc();
   }, []);
 
   return (
@@ -67,7 +67,9 @@ const WalletDashboardHeading = ({ id }) => {
         <div className=" border  p-6 rounded-xl flex flex-col justify-center">
           <h1 className="text-xl md:text-2xl font-semibold">Your ID number</h1>
 
-          <h1 className="text-yellow-200">{eventDataFromDb[0]?.userId}</h1>
+          <h1 className="text-yellow-200">
+            {eventDataFromDb && eventDataFromDb[0]?.userId}
+          </h1>
         </div>
       </div>
     </div>

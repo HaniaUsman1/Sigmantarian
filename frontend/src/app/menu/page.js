@@ -50,14 +50,6 @@ const Page = () => {
 
   return (
     <div className="bg-[#3f054f] h-screen">
-      {/* <div className="flex justify-center items-center">
-        <h2 className="text-3xl lg:text-5xl text-white font-semibold">
-          Dashboard Coming Soon in
-        </h2>
-        <p className="text-2xl text-white font-semibold">
-          {" : " + currentTime}
-        </p>
-      </div> */}
       <RegistrationDashboard viewHandler={handleClick} idHandler={idHandler} />
     </div>
   );
