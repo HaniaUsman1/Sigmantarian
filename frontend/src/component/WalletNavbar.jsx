@@ -81,12 +81,7 @@ export default function WalletNavbar() {
                 >
                   Statistics{" "}
                 </button>{" "}
-                <button
-                  onClick={statisticsHandler}
-                  className="bg-[#80299d] hidden md:block border border-teal-400 px-4 py-[10px] text-gray-200 font-semibold md:text-lg rounded-lg"
-                >
-                  DiscordBot{" "}
-                </button>{" "}
+              
                 <ConnectWallet className="w-full   cursor-pointer rounded-3xl bg-[#9064b2] p-[10px] text-[12px]  font-normal leading-[20px] text-white sm:p-[15px] sm:text-[15px] md:w-[60%]" />{" "}
               </div>
 
